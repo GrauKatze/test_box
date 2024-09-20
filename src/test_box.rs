@@ -1,4 +1,5 @@
 mod configurator;
+mod program;
 
 pub fn init(args: Vec<String>) {
     match configurator::args_pars(args) {
