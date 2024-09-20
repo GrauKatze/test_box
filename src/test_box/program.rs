@@ -1,3 +1,4 @@
+//! Модуль для управления целевым приложением
 use std::io::Write;
 
 pub struct Program {
@@ -14,16 +15,18 @@ impl Program {
         }
     }
 
+    /// Проверка нахождения целевого приложения по переданному пути
     fn is_path_valid(path: &String) -> bool {
         std::path::Path::new(&path).exists()
     }
 
+    /// Запуск целевого приложения
     pub fn launch(
         &mut self,
         test_args: Option<&[u8]>,
         test_input: Option<String>,
     ) -> Result<Vec<u8>, String> {
-        let local_args = test_args.unwrap_or("".as_bytes());
+        let _local_args = test_args.unwrap_or("".as_bytes());
         let local_input = test_input.unwrap_or("default".to_string());
 
         let mut exe_program = std::process::Command::new(&self.path)
