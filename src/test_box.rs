@@ -17,7 +17,7 @@ fn write_help() {
     println!(env!("CARGO_PKG_NAME"));
     println!("version: {}", env!("CARGO_PKG_VERSION"));
     println!(env!("CARGO_PKG_DESCRIPTION"));
-    println!("\n\tUsage: {} [key]\n", env!("CARGO_PKG_NAME"));
+    println!("\nUsage: {} [key]\n", env!("CARGO_PKG_NAME"));
     println!("KEYS:");
     println!("{:20} {}", "-h | --help", "this text");
     println!(
