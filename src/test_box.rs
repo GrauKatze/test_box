@@ -1,3 +1,5 @@
+use program::Program;
+
 mod configurator;
 mod program;
 
@@ -28,5 +30,11 @@ fn write_help() {
 }
 
 fn run(path: String) {
-    unimplemented!();
+    let mut program = Program::new(path);
+    println!(
+        "{:?}",
+        program
+            .launch(Some("test_args".as_bytes()), Some("test_input".to_string()))
+            .unwrap()
+    );
 }
