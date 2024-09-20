@@ -2,5 +2,8 @@
 name = "test_box"
 version = "0.1.0"
 edition = "2021"
+authors = ["GrauKatze"]
+description = "Small test utils"
+licence = "GPL-3.0-or-later"
 
 [dependencies]
