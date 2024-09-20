@@ -1,3 +1,5 @@
+mod test_box;
+
 fn main() {
-    println!("Hello, world!");
+    test_box::init(std::env::args().skip(1).collect());
 }
