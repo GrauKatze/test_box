@@ -20,7 +20,10 @@ fn write_help() {
     println!("\nUsage: {} [key]\n", env!("CARGO_PKG_NAME"));
     println!("KEYS:");
     println!("{:20} {}", "-h | --help", "this text");
-    println!("{:20} {}", "-p | --path <PATH>", "take a path");
+    println!(
+        "{:20} {}",
+        "-p | --path <PATH>", "take a path to test program"
+    );
 }
 
 fn run(path: String) {
