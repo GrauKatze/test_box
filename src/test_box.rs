@@ -41,11 +41,18 @@ impl TestBox {
     /// Основная функция для работы
     pub fn run(path: String) {
         let mut program = program::Program::new(path);
-        println!(
-            "{:?}",
-            program
-                .launch(Some("test_args".as_bytes()), Some("test_input".to_string()))
-                .unwrap()
-        );
+        let test_input = vec!["test one", "test two", "test 3"];
+        for i in test_input {
+            println!(
+                "{:?}",
+                format!("{i}\n")
+                    == String::from_utf8(
+                        program
+                            .launch(Some("test_args".as_bytes()), Some(i.to_string()))
+                            .unwrap()
+                    )
+                    .expect("msg")
+            );
+        }
     }
 }
